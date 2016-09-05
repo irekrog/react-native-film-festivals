@@ -1,0 +1,3 @@
+rootProject.name = 'filmFestival'
+
+include ':app'
