@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {
-  StyleSheet,
   Text,
   TouchableHighlight,
   View
 } from 'react-native';
+
+import {Container, Header, Title, Content, Button, Icon, List, ListItem} from 'native-base';
 
 export default class Details extends Component {
 
@@ -21,29 +22,35 @@ export default class Details extends Component {
 
   render() {
     return (
-      <View>
-        <TouchableHighlight onPress={this.navSecond}>
-          <Text style={styles.back}>Back to the list</Text>
-        </TouchableHighlight>
-        <Text style={styles.fontSize}>Name: {this.props.name}</Text>
-        <Text style={styles.fontSize}>Short name: {this.props.shortName}</Text>
-        <Text style={styles.fontSize}>City: {this.props.city}</Text>
-        <Text style={styles.fontSize}>Country: {this.props.country}</Text>
-        <Text style={styles.fontSize}>URL: {this.props.url}</Text>
-
-      </View>
+      <Container>
+        <Header>
+          <Button transparent onPress={this.navSecond}>
+            <Icon name='ios-arrow-back' />
+          </Button>
+          <Title>
+            Festival details
+          </Title>
+        </Header>
+        <Content>
+          <List>
+            <ListItem>
+              <Text>{this.props.name}</Text>
+            </ListItem>
+            <ListItem>
+              <Text>{this.props.shortName}</Text>
+            </ListItem>
+            <ListItem>
+              <Text>{this.props.city}</Text>
+            </ListItem>
+            <ListItem>
+              <Text>{this.props.country}</Text>
+            </ListItem>
+            <ListItem>
+              <Text>{this.props.url}</Text>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  fontSize: {
-    fontSize: 22
-  },
-  back: {
-    fontSize: 20,
-    color: '#020202',
-    paddingTop: 10,
-    paddingBottom: 10
-  }
-});

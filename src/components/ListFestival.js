@@ -6,7 +6,7 @@ import {
 
 import Spinner from 'react-native-loading-spinner-overlay';
 
-import {Container, Content, List, ListItem} from 'native-base';
+import {Container, Content, List, ListItem, Header, Title} from 'native-base';
 
 export default class ListFestival extends Component {
 
@@ -80,6 +80,11 @@ export default class ListFestival extends Component {
     else {
       return (
         <Container>
+          <Header>
+            <Title>
+              Film Festivals
+            </Title>
+          </Header>
           <Content>
             <List dataArray={this.state.dataSource}
                   renderRow={this.renderList}/>
