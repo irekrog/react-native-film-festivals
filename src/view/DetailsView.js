@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {
-  Text
+  Text,
+  Linking,
+  StyleSheet
 } from 'react-native';
 
 import {Container, Header, Title, Content, Button, Icon, List, ListItem} from 'native-base';
@@ -43,8 +45,8 @@ export default class Details extends Component {
             <ListItem>
               <Text>{this.props.country}</Text>
             </ListItem>
-            <ListItem>
-              <Text>{this.props.url}</Text>
+            <ListItem onPress={() => Linking.openURL(this.props.url)}>
+              <Text style={styles.linkColor}>{this.props.url}</Text>
             </ListItem>
           </List>
         </Content>
@@ -52,3 +54,10 @@ export default class Details extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  linkColor: {
+    color: '#1976D2',
+    textDecorationLine: 'underline'
+  }
+});

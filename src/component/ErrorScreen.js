@@ -17,7 +17,7 @@ export default class ListFestival extends Component {
           </Title>
         </Header>
         <Content>
-          <Text style={styles.error}>Network request failed. Check the internet connection or try again later.</Text>
+          <Text style={styles.error}>Error. Check the internet connection or try again later.</Text>
         </Content>
       </Container>
     );

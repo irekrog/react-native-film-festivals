@@ -41,7 +41,7 @@ export default class ListFestivalView extends Component {
           dataSource: responseJson.festivals
         });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({
           loading: false,
           network: false
