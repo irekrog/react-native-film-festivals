@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {
-  Text,
-  TouchableHighlight,
-  View
+  Text
 } from 'react-native';
 
 import {Container, Header, Title, Content, Button, Icon, List, ListItem} from 'native-base';
@@ -25,7 +23,7 @@ export default class Details extends Component {
       <Container>
         <Header>
           <Button transparent onPress={this.navSecond}>
-            <Icon name='ios-arrow-back' />
+            <Icon name='ios-arrow-back'/>
           </Button>
           <Title>
             Festival details

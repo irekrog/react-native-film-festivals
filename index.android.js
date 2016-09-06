@@ -4,8 +4,8 @@ import {
   Navigator
 } from 'react-native';
 
-import ListFestival from './src/components/ListFestival';
-import Details from './src/components/Details';
+import ListFestivalView from './src/view/ListFestivalView';
+import DetailsView from './src/view/DetailsView';
 
 
 class MainActivity extends Component {
@@ -16,7 +16,7 @@ class MainActivity extends Component {
         initialRoute={{activeScreen: 'listScreen'}}
         renderScene={MainActivity.navigatorRenderScene}
         configureScene={(route, routeStack) =>
-          Navigator.SceneConfigs.FadeAndroid}
+          Navigator.SceneConfigs.HorizontalSwipeJump}
       />
     );
   }
@@ -25,20 +25,20 @@ class MainActivity extends Component {
     switch (route.activeScreen) {
       case 'listScreen':
         return (
-          <ListFestival
+          <ListFestivalView
             navigator={navigator}
             title="listScreen"
           />);
       case 'detailsScreen':
         return (
-          <Details
+          <DetailsView
             navigator={navigator}
             title="detailsScreen"
-            name={route.name}
-            shortName={route.shortName}
-            city={route.city}
-            country={route.country}
-            url={route.url}
+            name={route.filmData.name}
+            shortName={route.filmData.shortName}
+            city={route.filmData.city}
+            country={route.filmData.country}
+            url={route.filmData.url}
           />);
     }
   }
