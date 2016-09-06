@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
   Text,
   Linking,
-  StyleSheet
+  StyleSheet,
+  BackAndroid
 } from 'react-native';
 
 import {Container, Header, Title, Content, Button, Icon, List, ListItem} from 'native-base';
@@ -12,6 +13,13 @@ export default class Details extends Component {
   constructor(props) {
     super(props);
     this.navSecond = this.navSecond.bind(this);
+  }
+
+  componentDidMount() {
+    BackAndroid.addEventListener('hardwareBackPress', () => {
+      this.navSecond();
+      return true;
+    });
   }
 
   navSecond() {
